@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class Contact {
     constructor(subject, enterprise, message) {
         this.Subject = subject;
@@ -16,4 +14,5 @@ class Contact {
         return this.Message;
     }
 }
-exports.default = Contact;
+export default Contact;
+//# sourceMappingURL=Contact.js.map

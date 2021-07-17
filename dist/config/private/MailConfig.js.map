@@ -1,0 +1,1 @@
+{"version":3,"file":"MailConfig.js","sourceRoot":"","sources":["../../../src/config/private/MailConfig.ts"],"names":[],"mappings":"AAAA,MAAM,UAAU;IAAhB;QACqB,SAAI,GAAW,2BAA2B,CAAA;QAC1C,aAAQ,GAAW,YAAY,CAAA;IASpD,CAAC;IAPG,OAAO;QACH,OAAO,IAAI,CAAC,IAAI,CAAA;IACpB,CAAC;IAED,WAAW;QACP,OAAO,IAAI,CAAC,QAAQ,CAAA;IACxB,CAAC;CACJ;AAED,eAAe,IAAI,UAAU,EAAE,CAAA"}

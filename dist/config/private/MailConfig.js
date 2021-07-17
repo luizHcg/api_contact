@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class MailConfig {
     constructor() {
         this.MAIL = 'contato@luizhcgdev.com.br';
@@ -12,4 +10,5 @@ class MailConfig {
         return this.PASSWORD;
     }
 }
-exports.default = new MailConfig();
+export default new MailConfig();
+//# sourceMappingURL=MailConfig.js.map

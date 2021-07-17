@@ -1,18 +1,13 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const nodemailer_1 = __importDefault(require("nodemailer"));
-const MailConfig_1 = __importDefault(require("../config/private/MailConfig"));
-const ProviderConfig_1 = __importDefault(require("../config/private/ProviderConfig"));
+import nodeMailer from 'nodemailer';
+import MailConfig from "../config/private/MailConfig";
+import ProviderConfig from "../config/private/ProviderConfig";
 class Mail {
     constructor(replyTo, subject, text, name) {
-        this.myUser = MailConfig_1.default.getMail();
-        this.myPass = MailConfig_1.default.getPassword();
-        this.providerHost = ProviderConfig_1.default.getHost();
-        this.providerPort = ProviderConfig_1.default.getPort();
-        this.TRANSPORT = nodemailer_1.default.createTransport({
+        this.myUser = MailConfig.getMail();
+        this.myPass = MailConfig.getPassword();
+        this.providerHost = ProviderConfig.getHost();
+        this.providerPort = ProviderConfig.getPort();
+        this.TRANSPORT = nodeMailer.createTransport({
             host: this.providerHost,
             port: this.providerPort,
             auth: {
@@ -39,4 +34,5 @@ class Mail {
         });
     }
 }
-exports.default = Mail;
+export default Mail;
+//# sourceMappingURL=Mail.js.map
