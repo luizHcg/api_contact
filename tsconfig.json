@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
+    "lib": [
+      "es6"
+    ],
+    "allowJs": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "removeComments": true,
+    "strict": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "src/@types"
+    ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "moduleResolution": "Node",
+    "paths": {
+      "@controllers/*": [
+        "./src/controller/*"
+      ],
+      "@configs/*": [
+        "./src/config/*"
+      ],
+      "@models/*": [
+        "./src/model/*"
+      ]
+    },
+    "plugins": [
+      {
+        "transform": "@zerollup/ts-transform-paths"
+      }
+    ]
+  },
+  "exclude": [
+    "src/test"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}
