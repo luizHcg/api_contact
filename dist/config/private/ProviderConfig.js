@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class ProviderConfig {
     constructor() {
         this.HOST = 'smtp.umbler.com';
@@ -18,5 +20,5 @@ class ProviderConfig {
         return this.API_TOKEN;
     }
 }
-export default new ProviderConfig();
+exports.default = new ProviderConfig();
 //# sourceMappingURL=ProviderConfig.js.map
