@@ -1,20 +1,20 @@
-import { Router } from 'express'
+import {Router, Request, Response, NextFunction} from 'express'
 import Mail from '@controllers/Mail'
 
 const routes = Router()
 
-routes.get('/', (request, response) => {
-  return response.json({ message: 'Hello Word! -__-' })
+routes.get('/', (req, res) => {
+    return res.json(req.url)
 })
 
-routes.post('/send', (request, response) => {
-  new Mail(request.body.email, request.body.assunto, request.body.mensagem, request.body.nome)
-    .sendMsg()
-    .then(info => {
-      return response.status(202).json(info.accepted)
-    }).catch(error => {
-      return response.status(406).json(error)
-    })
+routes.post('/send', (req, res) => {
+    return new Mail(req.body.mail, req.body.subject, req.body.message, req.body.name, req.body.enterprise)
+        .sendMsg()
+        .then(info => {
+            return res.status(202).json(info.accepted)
+        }).catch(error => {
+            return res.status(406).json(error)
+        })
 })
 
 export default routes
