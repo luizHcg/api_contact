@@ -1,0 +1,69 @@
+{
+    "info": {
+        "title": "API de para formulario de contato",
+        "version": "1.0.0",
+        "description": "Essa API tem como objetivo eviar e-mail.",
+        "contact": {
+            "name": "Luiz Henrique",
+            "email": "contato@luizhcgdev.com.br"
+        }
+    },
+    "swagger": "2.0",
+    "host": "luizhcgdev.com.br",
+    "basePath": "/api",
+    "paths": {
+        "/send": {
+            "post": {
+                "description": "Essa rota será resposável por encaminhar o e-mail",
+                "parameters": [
+                    {
+                        "description": "Preencha o formulario de contato.",
+                        "name": "CallMy",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "subject": {
+                                    "type": "string",
+                                    "example": "Proposta para desenvolvedor Node."
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "test@test.com"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Luiz Henrique"
+                                },
+                                "enterprise": {
+                                    "type": "string",
+                                    "example": "LHG Ltda."
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Isso e apenas um exemplo."
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ação executada."
+                    },
+                    "401": {
+                        "description": "Você não está autorizado a utilizar essa função."
+                    },
+                    "404": {
+                        "description": "Não foi possivel realizar essa ação"
+                    }
+                },
+                "summary": "Envio de e-mail",
+                "tags": [
+                    "SendMail"
+                ]
+            }
+        }
+    }
+}

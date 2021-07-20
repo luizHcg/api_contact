@@ -6,16 +6,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const Mail_1 = __importDefault(require("../controller/Mail"));
 const routes = express_1.Router();
-routes.get('/', (request, response) => {
-    return response.json({ message: 'Hello Word! -__-' });
+routes.get('/', (req, res) => {
+    return res.json(req.url);
 });
-routes.post('/send', (request, response) => {
-    new Mail_1.default(request.body.email, request.body.assunto, request.body.mensagem, request.body.nome)
+routes.post('/send', (req, res) => {
+    return new Mail_1.default(req.body.mail, req.body.subject, req.body.message, req.body.name, req.body.enterprise)
         .sendMsg()
         .then(info => {
-        return response.status(202).json(info.accepted);
+        return res.status(202).json(info);
     }).catch(error => {
-        return response.status(406).json(error);
+        return res.status(406).json(error);
     });
 });
 exports.default = routes;

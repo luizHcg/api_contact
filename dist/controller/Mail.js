@@ -4,14 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const nodemailer_1 = __importDefault(require("nodemailer"));
-const MailConfig_1 = __importDefault(require("../config/private/MailConfig"));
-const ProviderConfig_1 = __importDefault(require("../config/private/ProviderConfig"));
+const MailConfig_private_1 = __importDefault(require("../config/private/MailConfig.private"));
+const ProviderConfig_private_1 = __importDefault(require("../config/private/ProviderConfig.private"));
 class Mail {
-    constructor(replyTo, subject, text, name) {
-        this.myUser = MailConfig_1.default.getMail();
-        this.myPass = MailConfig_1.default.getPassword();
-        this.providerHost = ProviderConfig_1.default.getHost();
-        this.providerPort = ProviderConfig_1.default.getPort();
+    constructor(replyTo, subject, text, name, enterprise) {
+        this.myUser = MailConfig_private_1.default.MAIL;
+        this.myPass = MailConfig_private_1.default.PASSWORD;
+        this.providerHost = ProviderConfig_private_1.default.HOST;
+        this.providerPort = ProviderConfig_private_1.default.PORT;
         this.TRANSPORT = nodemailer_1.default.createTransport({
             host: this.providerHost,
             port: this.providerPort,
@@ -24,6 +24,7 @@ class Mail {
         this.SUBJECT = subject;
         this.TEXT = text;
         this.NAME = name;
+        this.ENTERPRISE = enterprise;
     }
     async sendMsg() {
         return await this.TRANSPORT.sendMail({
@@ -31,8 +32,8 @@ class Mail {
             to: this.myUser,
             replyTo: this.REPLY_TO,
             subject: this.SUBJECT,
-            text: `${this.NAME} \n ${this.TEXT}`
-        }).then(info => {
+            text: `${this.NAME} da empresa ${this.ENTERPRISE} \n ${this.TEXT}`
+        }).then((info) => {
             return info;
         }).catch(error => {
             return error;
