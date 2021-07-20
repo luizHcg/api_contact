@@ -5,6 +5,4 @@ export default interface IProviderConfig {
     readonly API_TOKEN: string
     readonly DOMAINS: string
     readonly DNS_HEROKU_DOMAINS: string
-
-    isDomain(domain: string): boolean
 }

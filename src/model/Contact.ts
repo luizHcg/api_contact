@@ -9,15 +9,15 @@ class Contact {
     private readonly Enterprise!: string
     private readonly Message!: string
 
-    getSubject () {
+    getSubject (): string {
       return this.Subject
     }
 
-    getEnterprise () {
+    getEnterprise (): string {
       return this.Enterprise
     }
 
-    getMessage () {
+    getMessage (): string {
       return this.Message
     }
 }
