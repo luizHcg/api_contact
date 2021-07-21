@@ -1,6 +1,6 @@
-import Contact from '../model/Contact'
+import Contact from '@models/Contact'
 
-test('Esperando inicialização, criação de objeto.', () => {
+test('Criando Objeto', () => {
   const contact = new Contact(
     'Teste de criação do assunto',
     'Não tem',

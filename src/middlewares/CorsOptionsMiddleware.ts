@@ -2,13 +2,8 @@ import cors from 'cors'
 import ProviderConfig from '@configs/private/ProviderConfig.private'
 
 class CorsOptionsMiddleware {
-    private readonly CORS_OPTIONS!: cors.CorsOptions
-
-    constructor () {
-      this.CORS_OPTIONS = {
-        origin: ProviderConfig.DOMAINS,
-        optionsSuccessStatus: 204
-      }
+    private readonly CORS_OPTIONS: cors.CorsOptions = {
+      origin: ProviderConfig.DOMAINS
     }
 
     getCorsOption (): cors.CorsOptions {

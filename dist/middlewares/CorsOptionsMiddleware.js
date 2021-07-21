@@ -7,8 +7,7 @@ const ProviderConfig_private_1 = __importDefault(require("../config/private/Prov
 class CorsOptionsMiddleware {
     constructor() {
         this.CORS_OPTIONS = {
-            origin: ProviderConfig_private_1.default.DOMAINS,
-            optionsSuccessStatus: 204
+            origin: ProviderConfig_private_1.default.DOMAINS
         };
     }
     getCorsOption() {
