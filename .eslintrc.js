@@ -17,5 +17,12 @@ module.exports = {
   plugins: [
     '@typescript-eslint'
   ],
-  rules: {}
+  rules: {},
+  overrides: [{
+    files: ['./src/@types/**.ts'],
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off'
+    }
+  }
+  ]
 }

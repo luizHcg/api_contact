@@ -59,7 +59,6 @@ class Mail {
         subject: this.SUBJECT,
         text: `Enviado por: ${this.NAME} \n E-mail de contato: ${this.REPLY_TO.toLowerCase()} \n Empresa: ${this.ENTERPRISE} \n \n ${this.TEXT}`
       }).then((info: SentMessageInfo) => {
-        console.log(info)
         return info
       }).catch(error => {
         return error
