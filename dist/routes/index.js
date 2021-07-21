@@ -5,22 +5,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const Mail_1 = __importDefault(require("../controller/Mail"));
+const AuthMiddleware_1 = __importDefault(require("../middlewares/AuthMiddleware"));
 const routes = express_1.Router();
 routes.get('/', (req, res) => {
     return res.redirect('/api-docs');
 });
-routes.post('/send', (req, res) => {
+routes.post('/send', AuthMiddleware_1.default, async (req, res) => {
     const { mail: replyTo, subject, message, name, enterprise } = req.body;
-    return new Mail_1.default(replyTo, subject, message, name, enterprise)
+    return await new Mail_1.default(replyTo, subject, message, name, enterprise)
         .sendMsg()
         .then((info) => {
-        if (typeof info === 'object') {
-            return res.status(202).json({ message: 'Enviado', sent: true });
+        if (typeof info === 'string') {
+            return res.status(406).json({ message: info, sent: false });
         }
         else
-            res.status(406).json({ message: info, sent: false });
+            return res.status(202).json({ message: 'Enviado', sent: true });
     }).catch(error => {
-        return res.status(406).json(error);
+        throw res.status(406).json(error);
     });
 });
 exports.default = routes;

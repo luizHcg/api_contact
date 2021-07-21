@@ -5,7 +5,7 @@ class ProviderConfigPrivate {
         this.HOST = 'smtp.umbler.com';
         this.PORT = 587;
         this.ID_USER = '';
-        this.API_TOKEN = '92b36a54-5d2f-42fa-8650-f809241fb540';
+        this.API_TOKEN = '47d30032-9551-4647-9cc9-686cc45129aa';
         this.DOMAINS = 'http://luizhcgdev.com.br';
         this.DNS_HEROKU_DOMAINS = 'clean-tor-fpexignt6anjvhrsywge3pmh.herokudns.com';
     }
