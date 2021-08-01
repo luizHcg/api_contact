@@ -1,1 +1,0 @@
-{"version":3,"file":"CorsOptionsMiddleware.js","sourceRoot":"","sources":["../../src/middlewares/CorsOptionsMiddleware.ts"],"names":[],"mappings":";;;;;AACA,sGAAoE;AAEpE,MAAM,qBAAqB;IAA3B;QACqB,iBAAY,GAAqB;YAChD,MAAM,EAAE,gCAAc,CAAC,OAAO;SAC/B,CAAA;IAKL,CAAC;IAHG,aAAa;QACX,OAAO,IAAI,CAAC,YAAY,CAAA;IAC1B,CAAC;CACJ;AAED,kBAAe,IAAI,qBAAqB,EAAE,CAAC,aAAa,EAAE,CAAA"}
